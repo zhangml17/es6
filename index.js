@@ -1,6 +1,6 @@
 // const { f, f1, check, f2 } = require('./src/defaultParameter') 
-const { f, f1, f2, f3 } = require('./src/changedParameter')
-
+// const { f, f1, f2, f3 } = require('./src/changedParameter')
+const { Person, Person1, proxy } = require('./src/objectProxy')
 
 
 
@@ -26,8 +26,28 @@ const { f, f1, f2, f3 } = require('./src/changedParameter')
 // console.log(f1(1,2,3,6), '---es6') // 12
 
 
-// 合并数组
-// ES5
-console.log(f2())
-// ES6
-console.log(f3())
+// // 合并数组
+// // ES5
+// console.log(f2())
+// // ES6
+// console.log(f3())
+
+// ES3的代理
+// var person = new Person()
+// console.log(person.get('sex')) // male
+// person.set('sex','female')
+// console.log(person.get('sex')) // male , 设置未成功
+
+// // ES5代理
+// console.log(Person1.sex) // male
+// try{
+//     Person1.sex = 'female'   
+// }catch(ex){
+//     console.log(ex.message)
+// }
+// console.log(Person1.sex) // male, 设置未成功
+
+// ES6 代理
+console.log(proxy.sex)  // male
+proxy.sex = 'female'
+console.log(proxy.sex)  // male, 设置未成功
