@@ -1,5 +1,5 @@
 // next方法的参数
-// 第一次想要
+// 在 Generator 函数外面再包一层，就可以在第一次调用next方法时，就能够输入值，
 function wrapper(generatorFunction) {
     return function(...args){
         let generatorObject = generatorFunction(...args)
